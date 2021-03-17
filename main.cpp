@@ -1,4 +1,7 @@
-//#pragma warning(disable:26812) // third party warning
+// Created by: Georgi S. Georgiev
+// All images and the complete game design were created by me.
+// Inspired by different Tron designs. I used some of the original Tron colors.
+// The "TRON" franchise is owned by DISNEY ENTERPRISES, Inc.
 
 #include "TheGrid.h" // contains the "SFML/Graphics.hpp" import
 #include "Lightcycle.h"
@@ -11,8 +14,10 @@
 using std::vector;
 using std::shared_ptr;
 
-enum class State { InTheMainMenu, Playing };
+enum class State { InTheMainMenu, Playing }; // Main game state.
 
+/* Handles the lightcycle keyboard key-press controlls.
+*/
 void handle_lightcycle_key_press(const sf::Event& the_event, Lightcycle& lightcycle) {
     if ((the_event.key.code == sf::Keyboard::Right || the_event.key.code == sf::Keyboard::D) &&
         !lightcycle.turned_right && !lightcycle.turned_left) {
@@ -38,6 +43,8 @@ void handle_lightcycle_key_press(const sf::Event& the_event, Lightcycle& lightcy
     }
 }
 
+/* Handles the lightcycle keyboard key-release controlls.
+*/
 void handle_lightcycle_key_release(const sf::Event& the_event, Lightcycle& lightcycle) {
     if ((the_event.key.code == sf::Keyboard::Right || the_event.key.code == sf::Keyboard::D) &&
         lightcycle.turned_right && !lightcycle.turned_left) {
@@ -55,6 +62,8 @@ void handle_lightcycle_key_release(const sf::Event& the_event, Lightcycle& light
     }
 }
 
+/* Updates the timer which it gets as an argument.
+*/
 void update_timer(float& timer, float delta_time) {
     timer += delta_time;
     if (timer + 100 > FLT_MAX) {
@@ -62,6 +71,8 @@ void update_timer(float& timer, float delta_time) {
     }
 }
 
+/* Sets the starting countdown Texts. Loads the selected font from a file.
+*/
 void set_countdown(sf::Text& text, sf::Font& font, std::string font_file) {
     if (!font.loadFromFile(font_file)) {
         std::cout << "Font NOT loaded! Trying one more time." << std::endl;
@@ -74,15 +85,17 @@ void set_countdown(sf::Text& text, sf::Font& font, std::string font_file) {
     text.setFont(font);
 }
 
-void show_countdown(float timer, const sf::View& view, sf::RenderWindow& window, sf::Text& text) {
-    if (timer < 3) {
-        if (timer >= 2) {
+/* Shows the contdown according to the value of the timer.
+*/
+void show_countdown(float timer, float offset_from_0, const sf::View& view, sf::RenderWindow& window, sf::Text& text) {
+    if (timer < 3 + offset_from_0) {
+        if (timer >= 2 + offset_from_0) {
             text.setString("GO!");
         }
-        else if (timer >= 1) {
+        else if (timer >= 1 + offset_from_0) {
             text.setString("STEADY");
         }
-        else if (timer >= 0) {
+        else if (timer >= 0 + offset_from_0) {
             text.setString("READY");
         }
         text.setPosition(sf::Vector2f(view.getCenter().x - text.getGlobalBounds().width / 2, view.getCenter().y - 50));
@@ -90,6 +103,8 @@ void show_countdown(float timer, const sf::View& view, sf::RenderWindow& window,
     }
 }
 
+/* Shows the number of players alive.
+*/
 void show_alive_counter(sf::RenderWindow& window, sf::Text& text, const sf::Font& font, const std::string& to_be_shown) {
     text.setCharacterSize(180);
     text.setFillColor(sf::Color(216, 218, 231));
@@ -110,6 +125,9 @@ void show_velocity(sf::RenderWindow& window, sf::Text& text, const sf::Font& fon
     window.draw(text);
 }
 
+/* Adds a prototype lightcycle to each of the ais.
+* "player_inx" is the index of the player's lightcycle which doesn't need any ai.
+*/
 void init_ai(std::vector<AI>& all_ai, std::vector<Lightcycle> prototypes, std::shared_ptr<Lightcycle> target, size_t player_inx) {
     for (size_t i = 0; i < prototypes.size(); ++i) {
         if (i != player_inx) {
@@ -118,6 +136,8 @@ void init_ai(std::vector<AI>& all_ai, std::vector<Lightcycle> prototypes, std::s
     }
 }
 
+/* The final "game over" text initialization.
+*/
 void show_ending_text(sf::RenderWindow& window, sf::Text& text, const sf::Font& font, const std::string& to_be_shown, bool won) {
     text.setCharacterSize(300);
     text.setFillColor(sf::Color(5, 13, 16));
@@ -131,6 +151,7 @@ void show_ending_text(sf::RenderWindow& window, sf::Text& text, const sf::Font& 
     text.setPosition(sf::Vector2f(window.getView().getCenter().x - text.getGlobalBounds().width / 2, window.getView().getCenter().y + 150));
     window.draw(text);
 }
+
 
 int main() {
     // ****************************************** INITIALIZATIONS ****************************************** //
@@ -163,29 +184,32 @@ int main() {
         std::cout << "The Texture can not be loaded." << std::endl;
     }
 
-    bool cheater = true;
+    int rand_num = rand() % 5 + 1; // random number from 1 to 5
+    int rand_num_sum = rand() % 801 - 400; // random number from -400 to 400
+    size_t cheating_level = 1;
     vector<Lightcycle> prototypes;
     for (int i = 0; i <= 7; ++i) {
         sf::Color color;
-        if (i == 3) cheater = false;
+        if (i == 3) cheating_level = 0;
         else 	{
-            cheater = true;
+            cheating_level = 1;
         }
         if (i <= 3) {
-            color.r = 255 - i * 32; //(190 - i * 10, 240 - i * 32, 255 - i * 22);
+            color.r = 255 - i * 32;
             color.g = 255 - i * 10;
             color.b = 255;
         }
         else {
-            color.r = 255; //(190 - i * 10, 240 - i * 32, 255 - i * 22);
+            color.r = 255;
             color.g = 255 - i * 10;
             color.b = 255 - i * 32;
         }
         Lightcycle new_lightcycle(sf::Vector2f(42, 120), // size
-                              sf::Vector2f(2000.f + i * 3000.f, 33500.f - 120 * i), // position
+                              sf::Vector2f(2000.f + i * 800.f * rand_num + rand_num_sum, 33500.f - 120 * i), // position
                               color, //color
-                              &texture, i, cheater); // texture and rotation
+                              &texture, i, cheating_level); // texture and rotation
         prototypes.push_back(new_lightcycle);
+        rand_num_sum = rand() % 801 - 400; // generate a new random number
     }
     size_t player_inx = 3;
     auto lightcycle = std::make_shared<Lightcycle>(prototypes[player_inx]);
@@ -272,6 +296,12 @@ int main() {
                     if (the_event.key.code == sf::Keyboard::Enter && (!lightcycle->isAlive || lightcycle->stopped)) {
                         // After Enter was pressed reset the game and return it to the starting status
                         state = State::InTheMainMenu;
+
+                        rand_num = rand() % 5 + 1;
+                        for (size_t i = 0; i < prototypes.size(); ++i) {
+                            prototypes[i].body.setPosition(sf::Vector2f(2000.f + i * 700.f * rand_num + rand_num_sum, 33500.f - 120 * i));
+                            rand_num_sum = rand() % 801 - 400;
+                        }
                         lightcycle = std::make_shared<Lightcycle>(prototypes[3]);
                         all_ai.clear(); // clear the ai vector
                         init_ai(all_ai, prototypes, lightcycle, player_inx); // initialize the new ai lightcycles
@@ -342,6 +372,7 @@ int main() {
             collidables.add_collidable(grid.bounds);
             collidables.add_collidable(*lightcycle);
 
+            // the game is on => update ai's position and make its move
             if (timer >= 3) {
                 for (size_t i = 0; i < all_ai.size(); ++i) {
                     all_ai[i].update_ai(collidables, delta_time);
@@ -354,8 +385,11 @@ int main() {
                 }
             }
 
+            // check if the player's lightcycle didn't crash
             collidables.check_for_collision(*lightcycle);
 
+            // If collided, destroy the light trace. Warning!
+            // The lighttrace is not destroyed immediately but during multiple iterations of the main while cycle..
             if (!lightcycle->isAlive) {
                 lightcycle->destroy_light_trace();
                 show_ending_text(window, ending_text, font, final_words_lose, false);
@@ -363,14 +397,14 @@ int main() {
             else {
                 functional_lightcycles++;
             }
-            collidables.calc_closest_collidable_dist(*lightcycle);
+
             window.draw(lightcycle->body);
             lightcycle->draw_trace(window);
             if (functional_lightcycles == 1 && lightcycle->isAlive && timer >= 3) {
                 lightcycle->stop();
                 show_ending_text(window, ending_text, font, final_words_win, true);
             }
-            show_countdown(timer, view, window, countdown_txt);
+            show_countdown(timer, 0, view, window, countdown_txt);
             std::string to_be_shown = "Alive: " + std::to_string(functional_lightcycles);
             show_alive_counter(window, lightcycle_count_txt, font, to_be_shown);
             show_velocity(window, lightcycle_count_txt, font, std::to_string((size_t)(lightcycle->get_velocity())));
