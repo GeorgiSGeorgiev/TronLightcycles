@@ -8,6 +8,7 @@
 
 /**
 * A class that contains all of the collidable objects in the game.
+* Creating different collidable classes allows the programmer to create different collidable levels.
 */
 class Collidable {
 public:
@@ -20,8 +21,18 @@ public:
 	bool add_collidable(const std::vector<sf::RectangleShape>& vector);
 	void reset();
 	size_t get_count();
+	/* Checks if there are any collidable objects inside this instance of the collidable class.
+	*/
 	bool is_available();
+	/**
+	* Calculates the closest obstacle in all needed directions.
+	* Directly updates the Lightcycle argument. Returns true if succeeds.
+	* If there are no collidables then there is no update and the function directly returns false.
+	*/
 	bool calc_closest_collidable_dist(Lightcycle& lightcycle);
+	/**
+	* Checks if the lightcycle from the function argument collides with any of the collidables added to this class.
+	*/
 	void check_for_collision(Lightcycle& lightcycle);
 private:
 	std::vector<float> bound_location;

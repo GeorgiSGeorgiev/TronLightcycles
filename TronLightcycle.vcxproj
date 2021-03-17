@@ -163,6 +163,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="LightcycleV5.png" />
+    <Image Include="StartMenuImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="TUTORIAL.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

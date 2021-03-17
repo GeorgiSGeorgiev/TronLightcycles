@@ -6,6 +6,8 @@
 class TheGrid {
 public:
     std::vector<sf::RectangleShape> bounds;
+    /* Constructs the grid. "freq" defines the space between two grid lines.
+    */
     TheGrid(float width, float height, float freq);
     ~TheGrid();
     void draw_the_grid(sf::RenderWindow& window);

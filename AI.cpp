@@ -223,7 +223,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		if (y - 300 < target_y && target_y < y + 2000 && x - 5000 < target_x && target_x < x && future_values[1] >= 400) {
 			// when the target is just a little bit behind the ai, then the ai must keep heading forward otherwise it will create an escape route for the target
 			if (future_values[1] >= 600) { 
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -231,7 +231,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		} // the target is far behind the ai but close enough to ai's trace-> cut it off by turning to the direction in which the target is located
 		else if (target_y > y + 2000 && x - 5000 < target_x && target_x < x && future_values[0] >= 400) {
 			if (future_values[0] >= 600) {
-				future_values[0] += 50000;
+				future_values[0] += 10000;
 			}
 			else {
 				future_values[0] += 500;
@@ -252,7 +252,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		// the ai is a little bit in front of the target
 		if (y - 300 < target_y && target_y < y + 2000 && x < target_x && target_x < x + 5000 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -260,7 +260,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		} // the target is far behind the ai but close enough to ai's trace-> cut it off by turning to the direction in which the target is located
 		else if (target_y > y + 2000 && x < target_x && target_x < x + 5000 && future_values[2] >= 400) {
 			if (future_values[2] >= 600) {
-				future_values[2] += 50000;
+				future_values[2] += 10000;
 			}
 			else {
 				future_values[2] += 500;
@@ -280,7 +280,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		// the ai is a little bit in front of the target
 		if (y - 2000 < target_y && target_y < y + 300 && x - 5000 < target_x && target_x < x && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -288,7 +288,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		} // the target is far behind the ai but close enough to ai's trace-> cut it off by turning to the direction in which the target is located
 		else if (target_y < y - 2000 && x - 5000 < target_x && target_x < x && future_values[2] >= 400) {
 			if (future_values[2] >= 600) {
-				future_values[2] += 50000;
+				future_values[2] += 10000;
 			}
 			else {
 				future_values[2] += 500;
@@ -308,7 +308,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 	if (cycle->get_rotation() == 180 && targets[0]->get_rotation() == 270) { // ai going down, target coming from the right
 		if (y - 2000 < target_y && target_y < y + 300 && x < target_x && target_x < x + 5000 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -316,7 +316,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		}
 		else if (target_y < y - 2000 && x < target_x && target_x < x + 5000 && future_values[2] >= 400) {
 			if (future_values[2] >= 600) {
-				future_values[2] += 50000;
+				future_values[2] += 10000;
 			}
 			else {
 				future_values[2] += 500;
@@ -335,7 +335,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 	if (cycle->get_rotation() == 90 && targets[0]->get_rotation() == 180) { // ai going to the right, target coming from above
 		if (y - 5000 < target_y && target_y < y && x - 2000 < target_x && target_x < x + 300 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -343,7 +343,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		}
 		else if (y - 5000 < target_y && target_y < y && target_x < x - 2000 && future_values[0] >= 400) {
 			if (future_values[0] >= 600) {
-				future_values[0] += 50000;
+				future_values[0] += 10000;
 			}
 			else {
 				future_values[0] += 500;
@@ -362,7 +362,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 	if (cycle->get_rotation() == 90 && targets[0]->get_rotation() == 0) { // ai going to the right, target coming from below
 		if (y < target_y && target_y < y + 5000 && x - 2000 < target_x && target_x < x + 300 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -370,7 +370,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		}
 		else if (y < target_y && target_y < y + 5000 && target_x < x - 2000 && future_values[2] >= 400) {
 			if (future_values[2] >= 600) {
-				future_values[2] += 50000;
+				future_values[2] += 10000;
 			}
 			else {
 				future_values[2] += 500;
@@ -389,7 +389,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 	if (cycle->get_rotation() == 270 && targets[0]->get_rotation() == 180) { // ai going to the left, target coming from above
 		if (y - 5000 < target_y && target_y < y && x - 300 < target_x && target_x < x + 2000 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -397,7 +397,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		}
 		else if (y - 5000 < target_y && target_y < y && target_x > x + 2000 && future_values[2] >= 400) {
 			if (future_values[2] >= 600) {
-				future_values[2] += 50000;
+				future_values[2] += 10000;
 			}
 			else {
 				future_values[2] += 500;
@@ -416,7 +416,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 	if (cycle->get_rotation() == 270 && targets[0]->get_rotation() == 0) { // ai going to the left, target coming from below
 		if (y < target_y && target_y < y + 5000 && x - 300 < target_x && target_x < x + 2000 && future_values[1] >= 400) {
 			if (future_values[1] >= 600) {
-				future_values[1] += 50000;
+				future_values[1] += 10000;
 			}
 			else {
 				future_values[1] += 500;
@@ -424,7 +424,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		}
 		else if (y < target_y && target_y < y + 5000 && target_x > x + 2000 && future_values[0] >= 400) {
 			if (future_values[0] >= 600) {
-				future_values[0] += 50000;
+				future_values[0] += 10000;
 			}
 			else {
 				future_values[0] += 500;

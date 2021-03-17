@@ -60,5 +60,16 @@
     <Image Include="LightcycleV5.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="StartMenuImage.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="TUTORIAL.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

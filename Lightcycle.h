@@ -38,6 +38,7 @@ public:
 	bool turn_right();
 
 	sf::Vector2f get_direction_vec();
+
 	// not used
 	sf::Vector2f get_direction_vec(float custom_rotation);
 
