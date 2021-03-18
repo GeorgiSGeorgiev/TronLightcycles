@@ -4,7 +4,7 @@ Here you will find all of the game controls, the rules and the main goal of the 
 
 ## Main menu and game difficulty
 
-![The Main Menu](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/StartMenuImage.png)
+![The Main Menu](/StartMenuImage.png)
 
 Right after starting the program a main menu appears. There you can see the following buttons:
 
@@ -22,7 +22,7 @@ Pressing the **Esc** (Escape) key quits the game directly at any time (even duri
 
 ## Starting the Game and Basic controls
 
-![The Starting Position](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/TheGame.png)
+![The Starting Position](/TheGame.png)
 
 After the Start is selected and the **Enter** button is pressed, the game starts. There is a short countdown in the beginning to give the player a chance to prepare. Right after the countdown ends the enemy lightcycles spawn. Their spawning points are from the both sides of the player's lighcycle. The distance between the lightcycles is randomly chosen to make the game more challenging and unpredictable. Just after the lightcycles are spawned they start moving in the same direction (up).
 
@@ -38,7 +38,7 @@ Just after the start of the game if you want to go faster than 4200, you will ha
 
 ## Rules
 
-![Gameplay](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/Gameplay.png)
+![Gameplay](/Gameplay.png)
 
 The main goal is to survive until the end. Keep in mind that all of the lighttraces are deadly! You can be killed even by your lighttrace! By derezing an enemy lightcycle its lighttrace is destroyed as well.
 
@@ -56,6 +56,6 @@ There are 7 enemy AI lightcycles. They all try to derez (destroy) you! Keep this
 
 ## Endgame
 
-![The End](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/Endgame.png)
+![The End](/Endgame.png)
 
 After the last enemy has been defeated or you have been derezzed you will see some final words. You will have to press **Enter** after that and you will be returned to the main menu. From there you can start again. The Grid will be cleared and the action can begin again.
