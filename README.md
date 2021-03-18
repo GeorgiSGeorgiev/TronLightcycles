@@ -20,6 +20,8 @@ There are three different Markdown files in this repository which serve as a det
 2. [TUTORIAL.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/TUTORIAL.md) contains the main game description. There you can find the different controls of the game and all of the game rules.
 3. [INTERNALS.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/INTERNALS.md) is the main project description. It is a short guide which shows what class in which part of the project is defined.
 
+The size of the source code itself is 66.7 KB.
+
 
 
 ## Credits
