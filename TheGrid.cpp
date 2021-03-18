@@ -4,6 +4,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+/* Represents the borders of the playing field. Draws the "floor" of the field.
+*/
 TheGrid::TheGrid(float width, float height, float freq) {
     this->width = width;
     this->height = height;
@@ -12,6 +14,7 @@ TheGrid::TheGrid(float width, float height, float freq) {
     this->line_wid = 100;
     float position_bias = (bounds_size_bias - line_wid) / 2;
 
+    // initialization of the different bounds
     sf::RectangleShape horUpperBound(sf::Vector2f(this->width + bounds_size_bias, line_wid));
     horUpperBound.setFillColor(sf::Color(100, 35, 185));
     horUpperBound.setPosition(-position_bias, -position_bias);

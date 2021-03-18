@@ -2,7 +2,8 @@
 #define THEGRID_H
 
 #include <SFML/Graphics.hpp>
-
+/* Represents the borders of the playing field. Draws the "floor" of the field.
+*/
 class TheGrid {
 public:
     std::vector<sf::RectangleShape> bounds;

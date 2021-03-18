@@ -71,5 +71,11 @@
     <None Include="TUTORIAL.md">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="INTERNALS.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="INSTALL.md">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

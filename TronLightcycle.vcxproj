@@ -166,6 +166,8 @@
     <Image Include="StartMenuImage.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="INSTALL.md" />
+    <None Include="INTERNALS.md" />
     <None Include="README.md" />
     <None Include="TUTORIAL.md" />
   </ItemGroup>
