@@ -17,7 +17,7 @@ It has been created via SFML and was completely written in C++.
 There are three different Markdown files in this repository which serve as a detailed description of the whole project and the game itself.
 
 1. [INSTALL.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/INSTALL.md) will help you to download and install SFML in both Windows and Linux OS. To compile the project on Windows you will need Visual Studio. Without SFML the game can not be compiled. There you can find how to compile the game itself too.
-2. [TUTORIAL.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/TUTORIAL.md) contains the main game description. There you can find the different controls of the game and all of the rules of the game.
+2. [TUTORIAL.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/TUTORIAL.md) contains the main game description. There you can find the different controls of the game and all of the game rules.
 3. [INTERNALS.md](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/INTERNALS.md) is the main project description. It is a short guide which shows what class in which part of the project is defined.
 
 
