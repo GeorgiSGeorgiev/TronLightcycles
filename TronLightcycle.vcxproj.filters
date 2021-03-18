@@ -63,6 +63,9 @@
     <Image Include="StartMenuImage.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="TheGame.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">

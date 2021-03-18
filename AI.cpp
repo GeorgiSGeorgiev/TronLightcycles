@@ -111,7 +111,7 @@ void AI::make_turn(sf::RenderWindow& window, Collidable& collidables) {
 		// target below to the right and the right turn is not too dangerous -> cut the target off
 		if (x < target_x && target_x < x + 2500 && y + 400 < target_y && target_y < y + 10000 && future_values[2] >= 400) {
 			if (future_values[2] >= 600) { // increase the priorities differently according to the danger level of the turn
-				future_values[2] += 30000;
+				future_values[2] += 50000;
 			}
 			else {
 				future_values[2] += 500;

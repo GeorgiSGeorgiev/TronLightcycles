@@ -164,6 +164,7 @@
   <ItemGroup>
     <Image Include="LightcycleV5.png" />
     <Image Include="StartMenuImage.png" />
+    <Image Include="TheGame.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="INSTALL.md" />

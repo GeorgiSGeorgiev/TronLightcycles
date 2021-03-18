@@ -184,8 +184,11 @@ int main() {
         std::cout << "The Texture can not be loaded." << std::endl;
     }
 
-    int rand_num = rand() % 5 + 1; // random number from 1 to 5
+    // the following numbers position the lightcycles at different places every time the game starts
+    // they just change the X coordinate of the lightcycles
+    int rand_num = rand() % 4 + 2; // random number from 2 to 5
     int rand_num_sum = rand() % 801 - 400; // random number from -400 to 400
+
     size_t cheating_level = 1;
     vector<Lightcycle> prototypes;
     for (int i = 0; i <= 7; ++i) {
@@ -209,7 +212,7 @@ int main() {
                               color, //color
                               &texture, i, cheating_level); // texture and rotation
         prototypes.push_back(new_lightcycle);
-        rand_num_sum = rand() % 801 - 400; // generate a new random number
+        rand_num_sum = rand() % 801 - 400; // generate a new random number for each lightcycle
     }
     size_t player_inx = 3;
     auto lightcycle = std::make_shared<Lightcycle>(prototypes[player_inx]);
@@ -297,7 +300,7 @@ int main() {
                         // After Enter was pressed reset the game and return it to the starting status
                         state = State::InTheMainMenu;
 
-                        rand_num = rand() % 5 + 1;
+                        rand_num = rand() % 4 + 2;
                         for (size_t i = 0; i < prototypes.size(); ++i) {
                             prototypes[i].body.setPosition(sf::Vector2f(2000.f + i * 700.f * rand_num + rand_num_sum, 33500.f - 120 * i));
                             rand_num_sum = rand() % 801 - 400;
