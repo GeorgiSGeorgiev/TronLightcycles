@@ -58,4 +58,4 @@ There are 7 enemy AI lightcycles. They all try to derez (destroy) you! Keep this
 
 ![The End](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/Endgame.png)
 
-After the last enemy has been defeated or you have been derezzed then you will see some final words. You will have to press **Enter** after that and then you are returned to the main menu. From there you can start again. The Grid will be cleared and the action can begin again.
+After the last enemy has been defeated or you have been derezzed you will see some final words. You will have to press **Enter** after that and you will be returned to the main menu. From there you can start again. The Grid will be cleared and the action can begin again.
