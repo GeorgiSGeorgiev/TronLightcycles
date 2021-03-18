@@ -8,7 +8,7 @@
 
 It has been created via SFML and was completely written in C++.
 
-![](C:%5CUsers%5Ccarsb%5Csource%5Crepos%5CTronLightcycle%5CTheGame.png)
+![](https://github.com/GeorgiSGeorgiev/TronLightcycles/blob/master/TheGame.png)
 
 
 
