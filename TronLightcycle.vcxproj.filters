@@ -66,6 +66,12 @@
     <Image Include="TheGame.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Endgame.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Gameplay.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">

@@ -4,6 +4,8 @@ Here you will find all of the game controls, the rules and the main goal of the 
 
 ## Main menu and game difficulty
 
+![The Main Menu]()
+
 Right after starting the program a main menu appears. There you can see the following buttons:
 
 * Start - starts the game with the selected difficulty level
@@ -20,7 +22,9 @@ Pressing the **Esc** (Escape) key quits the game directly at any time (even duri
 
 ## Starting the Game and Basic controls
 
-After the Start is selected and the **Enter** button is pressed, the game starts. There is a short countdown in the beginning to give the player chance to prepare for some action. Right after the countdown ends the enemy lightcycles spawn. Their spawning points are from the both sides of the player's lighcycle. The distance between the lightcycles is randomly chosen to make the game more challenging and unpredictable. Just after the lightcycles are spawned they start moving in the same direction (up).
+![The Starting Position]()
+
+After the Start is selected and the **Enter** button is pressed, the game starts. There is a short countdown in the beginning to give the player a chance to prepare. Right after the countdown ends the enemy lightcycles spawn. Their spawning points are from the both sides of the player's lighcycle. The distance between the lightcycles is randomly chosen to make the game more challenging and unpredictable. Just after the lightcycles are spawned they start moving in the same direction (up).
 
 Just after the start of the game if you want to go faster than 4200, you will have to press the acceleration button AFTER the countdown has already finished.
 
@@ -33,6 +37,8 @@ Just after the start of the game if you want to go faster than 4200, you will ha
 * Pressing the **Escape** will directly quit the game.
 
 ## Rules
+
+![Gameplay]()
 
 The main goal is to survive until the end. Keep in mind that all of the lighttraces are deadly! You can be killed even by your lighttrace! By derezing an enemy lightcycle its lighttrace is destroyed as well.
 
@@ -49,5 +55,7 @@ The game itself allows you to experiment and to try out new moves and tactics. B
 There are 7 enemy AI lightcycles. They all try to derez (destroy) you! Keep this in mind. The AI is custom made and it can surprise you in many ways. Don't underestimate it!
 
 ## Endgame
+
+![The End]()
 
 After the last enemy has been defeated or you have been derezzed then you will see some final words. You will have to press **Enter** after that and then you are returned to the main menu. From there you can start again. The Grid will be cleared and the action can begin again.

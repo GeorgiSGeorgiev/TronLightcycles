@@ -162,6 +162,8 @@
     <Font Include="arial.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Endgame.png" />
+    <Image Include="Gameplay.png" />
     <Image Include="LightcycleV5.png" />
     <Image Include="StartMenuImage.png" />
     <Image Include="TheGame.png" />
